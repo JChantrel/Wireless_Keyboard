@@ -1,2 +1,2 @@
 # Wireless_Keyboard
-Software voor een wireless keyboard gemaakt van een vtech kinderlaptop
+Dit is de repository voor een wireless keyboard. Dit project is te vinden op [Instrucabel]().
