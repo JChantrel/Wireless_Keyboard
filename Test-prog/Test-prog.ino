@@ -236,7 +236,6 @@ void loop() {
       case '*':
         Serial.write('*');
         break;
-      
     }
   }
 }
