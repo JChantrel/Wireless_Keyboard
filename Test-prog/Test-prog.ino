@@ -14,8 +14,8 @@ char hexaKeys[ROWS][COLS] = {
   {'S', 'T', 'b', 'c', 'd', 'l', 'm'},
   {'n', 'v', 'w', 'x', '^', '&', '*'},
 };
-byte rowPins[ROWS] = {13, 12, 14, 27, 26, 25, 33, 32, 35, 34};
-byte colPins[COLS] = {15, 2, 4, 5, 18, 19, 21};
+byte rowPins[ROWS] = {13, 12, 14, 27, 26, 25, 33, 32, 16, 17};
+byte colPins[COLS] = {23, 22, 4, 5, 18, 19, 21};
 
 /*
 const byte ROWS = 7;
@@ -29,30 +29,13 @@ char hexaKeys[ROWS][COLS] = {
   {'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x'},
   {'y', 'z', '!', '@', '#', '$', '%', '^', '&', '*'},
 };
-byte colPins[COLS] = {13, 12, 14, 27, 26, 25, 33, 32, 35, 34};
-byte rowPins[ROWS] = {15, 2, 4, 5, 18, 19, 21};
+byte colPins[COLS] = {13, 12, 14, 27, 26, 25, 33, 32, 16, 17};
+byte rowPins[ROWS] = {23, 22, 4, 5, 18, 19, 21};
 */
 Keypad customKeypad = Keypad( makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS);
 
 void setup() {
-  Serial.begin(9600);
-  pinMode(13, INPUT);
-  pinMode(12, INPUT);
-  pinMode(14, INPUT);
-  pinMode(27, INPUT);
-  pinMode(26, INPUT);
-  pinMode(25, INPUT);
-  pinMode(33, INPUT);
-  pinMode(32, INPUT);
-  pinMode(35, INPUT);
-  pinMode(34, INPUT);
-  pinMode(15, OUTPUT);
-  pinMode(2, OUTPUT);
-  pinMode(4, OUTPUT);
-  pinMode(5, OUTPUT);
-  pinMode(18, OUTPUT);
-  pinMode(19, OUTPUT);
-  pinMode(21, OUTPUT);
+  Serial.begin(115200);
 }
 
 void loop() {
@@ -60,9 +43,10 @@ void loop() {
   //Serial.print('A');
 
   if (customKey) {
+    //Serial.print("Key");
     switch (customKey) {
       case '0':
-        Serial.print('0');
+        //Serial.print('0');
         break;
       case '1':
         Serial.print('1');
